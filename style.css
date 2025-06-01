@@ -58,6 +58,7 @@ body {
   position: absolute;
   top: 10%;
   left: 42.5%;
+  width: 60%;
   transform: translate(-50%, -50%);
  
   animation: fadeInLetter 1s ease forwards;
