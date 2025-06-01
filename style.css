@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'letterFont';
+    src: url('./fonts/letterFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background: url(background.png) no-repeat center center fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'letterFont', 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.envelope-container {
+  text-align: center;
+}
+
+.envelope {
+  font-size: 5rem;
+  animation: bounce 1.5s infinite, flash 2s infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tip-text {
+  margin-top: 1rem;
+  color: #d26a00;
+  font-size: 1.2rem;
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
+
+.letter {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  animation: fadeInLetter 1s ease forwards;
+  opacity: 0;
+  z-index: 10;
+}
+
+
+@keyframes fadeInLetter {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+#blessing-text {
+  font-family: inherit !important;
+}
+
+.parchment {
+  background: url("letter.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  color: #3c2e1f;
+  font-family: 'letterFont', 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  line-height: 1.8;
+  overflow-y: auto;
+}
+
+/* 旗帜定位到信纸左右下角 */
+#flag-left, #flag-right {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 60px;
+  height: 60px;
+  z-index: 15;
+  pointer-events: none; /* 避免挡住文字点击 */
+}
+
+#flag-left {
+  left: 1.2rem;
+  transform-origin: 10px 10px; /* 旗杆顶部为轴心 */
+}
+
+#flag-right {
+  right: 1.2rem;
+  transform-origin: 50px 10px; /* 镜像时旗杆顶也为轴心 */
+}
+
+
+
+

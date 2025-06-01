@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>(●'◡'●)高考加油</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="envelope-container">
+    <div class="envelope" onclick="openEnvelope()">📧</div>
+    </div>
+
+
+    <div class="letter hidden">
+        <canvas id="flag-left" width="60" height="60"></canvas>
+        <div class="parchment">
+            <pre id="blessing-text"></pre>
+        </div>
+        <canvas id="flag-right" width="60" height="60"></canvas>
+    </div>
+
+
+    <audio id="bg-music" loop>
+    <source src="background.mp3" type="audio/mpeg" />
+    </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
